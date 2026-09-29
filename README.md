@@ -33,7 +33,7 @@ g++ -Wall -Wextra -Iinclude src/equipment_record.cpp src/main.cpp -o app
 mkdir build && cd build
 cmake ..
 cmake --build .
-./app```
+./app
 
 
 
