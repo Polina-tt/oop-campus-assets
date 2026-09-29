@@ -95,60 +95,37 @@ cmake --build .
 ```mermaid
 classDiagram
 
-
 class EquipmentItem {
-
-- int id
-- string name
-- string type
-- Location* location
-+ EquipmentItem()
-+ EquipmentItem(int id, string name, string type)
-+ getId() int
-+ getName() string
-+ getType() string
-+ setLocation(Location* location) void
-
+    - int id
+    - string name
+    - string type
+    - Location* location
+    + EquipmentItem()
+    + EquipmentItem(int id, string name, string type)
+    + getId() int
+    + getName() string
+    + getType() string
+    + setLocation(Location* location) void
 }
 
 class Location {
-
-- int id
-- string building
-- string room
-+ Location()
-+ Location(int id, string building, string room)
-+ getId() int
-+ getBuilding() string
-+ getRoom() string
-
+    - int id
+    - string building
+    - string room
+    + Location()
+    + Location(int id, string building, string room)
+    + getId() int
+    + getBuilding() string
+    + getRoom() string
 }
-
 
 class EquipmentInventory {
-
-- vector~EquipmentItem~ items
-+ addItem(EquipmentItem item) void
-+ removeItem(int id) void
-+ findItem(int id) EquipmentItem
-+ getItems() vector~EquipmentItem~
-
+    - vector~EquipmentItem~ items
+    + addItem(EquipmentItem item) void
+    + removeItem(int id) void
+    + findItem(int id) EquipmentItem
+    + getItems() vector~EquipmentItem~
 }
-
 
 EquipmentInventory "1" *-- "0..*" EquipmentItem : contains
 EquipmentItem "0..*" --> "1" Location : located at
-
-Автоматичний запуск перевірок (Bash-скрипт):
-./scripts/check_quality.sh
-
-
-Ручна збірка проєкту через CMake:
-mkdir build && cd build
-cmake ..
-cmake --build .
-
-Посилання на Pull Requests
-Pull Request (Лабораторна №2): https://github.com/Polina-tt/oop-campus-assets/pull/1
-
-Pull Request (Лабораторна №3): https://github.com/Polina-tt/oop-campus-assets/pull/2
