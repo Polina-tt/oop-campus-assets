@@ -129,7 +129,7 @@ class EquipmentInventory {
 
 EquipmentInventory "1" *-- "0..*" EquipmentItem : contains
 EquipmentItem "0..*" --> "1" Location : located at
-
+```
 
 Посилання на Pull Requests
 Pull Request (Лабораторна №2): https://github.com/Polina-tt/oop-campus-assets/pull/1
